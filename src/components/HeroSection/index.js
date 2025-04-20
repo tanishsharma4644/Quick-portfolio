@@ -6,6 +6,10 @@ import Typewriter from 'typewriter-effect';
 import { Bio } from '../../data/constants';
 
 const HeroSection = () => {
+    const someFunction = () => {
+        alert('About button clicked!');
+    };
+
     return (
         <div id="about">
             <HeroContainer>
@@ -29,6 +33,8 @@ const HeroSection = () => {
                         </TextLoop>
                         <SubTitle>{Bio.description}</SubTitle>
                         <ResumeButton href={Bio.resume} target='display'>Check Resume</ResumeButton>
+                        {/* Add the About button */}
+                        <button onClick={someFunction}>About</button>
                     </HeroLeftContainer>
 
                     <HeroRightContainer id="Right">
