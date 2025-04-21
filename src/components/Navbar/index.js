@@ -13,12 +13,21 @@ const Navbar = ({ toggleTheme }) => { // Receive toggleTheme as a prop
     <Nav>
       <NavbarContainer>
         <NavLogo to='/'>
-          <a
-            style={{ display: 'flex', alignItems: 'center', color: theme.text_primary, marginBottom: '20px', cursor: 'pointer' }}
+          <button
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              color: theme.text_primary,
+              marginBottom: '20px',
+              cursor: 'pointer',
+              background: 'none',
+              border: 'none',
+              padding: 0,
+            }}
             onClick={toggleTheme} // Call the toggleTheme function on logo click
           >
             <DiCssdeck size="3rem" /> <Span>Tanish Sharma</Span>
-          </a>
+          </button>
         </NavLogo>
         <MobileIcon>
           <FaBars onClick={() => setIsOpen(!isOpen)} />
