@@ -11,7 +11,11 @@ import Footer from "./components/Footer";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
 import ProjectDetails from "./components/ProjectDetails";
+import Certificate from './components/Certificate';
 import styled from "styled-components";
+import certificate1 from './images/12216045_MOOC_4CPM358Certificate_page-0001.jpg';
+import certificate2 from './images/NPTEL certificate_page-0001.jpg';
+import certificate3 from './images/BI-20240710-5640320.jpg'; // Import Certificate 3
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg}; /* Theme-based background */
@@ -25,6 +29,12 @@ const Wrapper = styled.div`
   width: 100%;
   clip-path: polygon(0 0, 100% 0, 100% 100%,30% 98%, 0 100%);
 `;
+
+const certificates = [
+  { image: certificate1, title: 'Certificate 1' },
+  { image: certificate2, title: 'Certificate 2' },
+  { image: certificate3, title: 'Certificate 3' }, // Use imported image
+];
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -45,6 +55,7 @@ function App() {
             <Skills />
             <Experience />
           </Wrapper>
+          <Certificate certificates={certificates} /> {/* Moved Certificate above Projects */}
           <Projects openModal={openModal} setOpenModal={setOpenModal} />
           <Wrapper>
             <Education />
